@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.swathisprasad.springboot.controller;
+package com.app.springboot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -5,11 +5,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.swathisprasad.tutorial</groupId>
-		<artifactId>tutorial-parent</artifactId>
+		<artifactId>app-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>tutorial-web</artifactId>
-	<name>tutorial-web</name>
+	<artifactId>app-web</artifactId>
+	<name>app-web</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

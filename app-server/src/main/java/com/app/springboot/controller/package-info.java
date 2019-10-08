@@ -5,4 +5,4 @@
  * @author Swathi
  *
  */
-package com.swathisprasad.springboot;
+package com.app.springboot.controller;

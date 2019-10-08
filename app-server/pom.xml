@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.swathisprasad.tutorial</groupId>
-    <artifactId>tutorial-parent</artifactId>
+    <artifactId>app-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>tutorial-server</artifactId>
+  <artifactId>app-server</artifactId>
   <packaging>war</packaging>
   
   <dependencies>
@@ -46,14 +46,14 @@
 		</dependency>
 		<dependency>
 	        <groupId>com.swathisprasad.tutorial</groupId>
-	        <artifactId>tutorial-web</artifactId>
+	        <artifactId>app-web</artifactId>
 	        <version>${project.version}</version>
 	        <scope>runtime</scope>
 	    </dependency>
 	</dependencies>
 	
 	<build>
-		<!-- <finalName>tutorial-server</finalName> -->
+		<!-- <finalName>app-server</finalName> -->
         <plugins>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -68,7 +68,7 @@
 				              <outputDirectory>${project.build.directory}/classes/resources/</outputDirectory >
 				              <resources>
 				                  <resource>
-				                      <directory>${project.parent.basedir}/tutorial-web/src/main/web/dist/web/</directory >
+				                      <directory>${project.parent.basedir}/app-web/src/main/web/dist/web/</directory >
 				                  </resource>
 				              </resources>
 				          </configuration>
@@ -98,8 +98,8 @@
 		        <groupId>org.apache.maven.plugins</groupId>
 		        <artifactId>maven-war-plugin</artifactId>
 		        <configuration>
-					<packagingExcludes>WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/tutorial-web-*.jar</packagingExcludes>
-		      		<warName>tutorial-app</warName>
+					<packagingExcludes>WEB-INF/lib/tomcat-*.jar, WEB-INF/lib/app-web-*.jar</packagingExcludes>
+		      		<warName>app</warName>
 		        </configuration>
       		</plugin>
         </plugins>

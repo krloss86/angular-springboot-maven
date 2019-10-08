@@ -1,11 +1,11 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-tutorial-web/src/main/web/dist
-tutorial-web/src/main/web/dist/np-app
-tutorial-web/src/main/web/node
-tutorial-web/src/main/web/node_modules
-tutorial-web/src/main/web/package-lock.json
-tutorial-web/target
-tutorial-web/.project
+app-web/src/main/web/dist
+app-web/src/main/web/dist/np-app
+app-web/src/main/web/node
+app-web/src/main/web/node_modules
+app-web/src/main/web/package-lock.json
+app-web/target
+app-web/.project
 tutorial-server/target
 tutorial-server/.project
 tutorial-server/.classpath

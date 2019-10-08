@@ -1,16 +1,9 @@
-/**
- * 
- */
-package com.swathisprasad.springboot;
+package com.app.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-/**
- * @author Swathi
- *
- */
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer {
 
