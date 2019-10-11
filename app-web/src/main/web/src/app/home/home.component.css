@@ -1,0 +1,4 @@
+.app-home-wrapper {
+    max-height: 100vh;
+    overflow-y: auto;
+}

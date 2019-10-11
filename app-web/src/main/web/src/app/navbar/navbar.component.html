@@ -1,6 +1,9 @@
-<nav class="navbar navbar-light bg-light">
+<div class="d-flex">
+<nav class="navbar navbar-light bg-light d-flex align-items-start flex-column" #navBarMenu>
+    <button class="btn btn-outline-success my-2 my-sm-0" (click)="expandMenu()">menu</button>
     <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Número Telefono" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Número Telefono" aria-label="Search" *ngIf="navBarExpanded">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
     </form>
   </nav>
+</div>
