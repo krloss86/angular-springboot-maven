@@ -8,6 +8,11 @@ import { SaldoComponent } from './saldo/saldo.component';
 import { RecomendacionComponent } from './recomendacion/recomendacion.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
+import { TopbarComponent } from './topbar/topbar.component';
+import { RecomendacionesComponent } from './recomendaciones/recomendaciones.component';
+import { DatosEquipoComponent } from './datos-equipo/datos-equipo.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +21,12 @@ import { HomeComponent } from './home/home.component';
     SaldoComponent,
     RecomendacionComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    FooterComponent,
+    TopbarComponent,
+    RecomendacionesComponent,
+    DatosEquipoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
