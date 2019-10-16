@@ -1,4 +1,6 @@
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+// import { DOCUMENT } from '@angular/common';
+// import { Component, Inject, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -9,23 +11,39 @@ export class NavbarComponent implements OnInit {
 
   @ViewChild('navBarMenu', {static: false}) navBarMenu: ElementRef;
 
-  navBarExpanded = false;
+  navBarExpanded = true;
 
-  constructor(private render: Renderer2) {
-
+  /*
+  constructor(
+    @Inject(DOCUMENT) private document: Document,
+    private render: Renderer2,
+    ) {
   }
+  */
+ constructor() {
+
+ }
 
   ngOnInit() {
   }
 
+  /*
   expandMenu() {
-    this.navBarExpanded = !this.navBarExpanded;
     if (this.navBarExpanded) {
-      this.render.addClass(this.navBarMenu.nativeElement, 'expand');
+
+      this.render.addClass(this.document.body, 'sidebar-toggled');
+
+      this.render.addClass(this.navBarMenu.nativeElement, 'toogle');
+
+      this.navBarExpanded = false;
     } else {
-      this.render.removeClass(this.navBarMenu.nativeElement, 'expand');
+
+      this.render.removeClass(this.document.body, 'sidebar-toggled');
+
+      this.render.removeClass(this.navBarMenu.nativeElement, 'toggle');
+
+      this.navBarExpanded = true;
     }
-    // this.render.addClass(this.navBarMenu.nativeElement, 'animated');
-    // this.render.addClass(this.navBarMenu.nativeElement, 'fadeInLeft');
   }
+  */
 }
