@@ -1,5 +1,5 @@
 import { Component, OnInit, Renderer2, Inject } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
+declare function initJsFromTs(): any;
 
 @Component({
   selector: 'app-home',
@@ -8,22 +8,12 @@ import { DOCUMENT } from '@angular/common';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(@Inject(DOCUMENT) private document: Document, private renderer2: Renderer2) {
+    constructor() {
 
   }
 
   ngOnInit() {
-
+    initJsFromTs();
   }
 
-  toggle() {
-
-    // this.document.body.classList.add('sidebar-toggled');
-    /*$("body").toggleClass("sidebar-toggled");
-      $(".sidebar").toggleClass("toggled");
-      if ($(".sidebar").hasClass("toggled")) {
-        $('.sidebar .collapse').collapse('hide');
-      };
-    }*/
-  }
 }

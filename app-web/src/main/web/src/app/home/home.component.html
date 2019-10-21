@@ -44,7 +44,7 @@
     <!-- End of Main Content -->
 
     <!-- Footer -->
-    <!-- <app-footer></app-footer> -->
+    <app-footer></app-footer>
     <!-- End of Footer -->
 
   </div>
@@ -71,7 +71,8 @@
       <div class="modal-body">¿Está seguro de Salir?</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-        <a class="btn btn-primary">Salir</a>
+        <button class="btn btn-info" (ngClick)="executeLogout()" type="button" data-dismiss="modal">Salir</button>
+        <!-- <a class="btn btn-primary">Salir</a> -->
       </div>
     </div>
   </div>
