@@ -12,6 +12,7 @@ import { RecomendacionComponent } from './recomendacion/recomendacion.component'
 import { RecomendacionesComponent } from './recomendaciones/recomendaciones.component';
 import { SaldoComponent } from './saldo/saldo.component';
 import { TopbarComponent } from './topbar/topbar.component';
+import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { TopbarComponent } from './topbar/topbar.component';
     TopbarComponent,
     RecomendacionesComponent,
     DatosEquipoComponent,
+    NoEncontradoComponent,
   ],
   imports: [
     BrowserModule,

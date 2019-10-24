@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { AuthenticationService } from './../login/_services/authentication.service';
 import { Component, OnInit, Renderer2, Inject } from '@angular/core';
 declare function initJsFromTs(): any;
 
@@ -8,12 +10,17 @@ declare function initJsFromTs(): any;
 })
 export class HomeComponent implements OnInit {
 
-    constructor() {
+  constructor(private router: Router, private authenticationService: AuthenticationService) {
 
   }
 
   ngOnInit() {
     initJsFromTs();
+  }
+
+  executeLogout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 
 }
