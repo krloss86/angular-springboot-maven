@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-recomendacion',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./recomendacion.component.css']
 })
 export class RecomendacionComponent implements OnInit {
+
+  @Input()
+  recomendaciones: Recomendaciones;
 
   constructor() { }
 

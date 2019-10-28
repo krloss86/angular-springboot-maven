@@ -1,6 +1,7 @@
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from './../login/_services/authentication.service';
-import { Component, OnInit, Renderer2, Inject } from '@angular/core';
+import { ClienteDataService } from './../services/cliente-data-service.service';
 declare function initJsFromTs(): any;
 
 @Component({
@@ -10,11 +11,26 @@ declare function initJsFromTs(): any;
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private authenticationService: AuthenticationService) {
+  informacionCliente: InformacionCliente;
 
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private clienteDataService: ClienteDataService
+    ) {
+      console.log('constructor');
+    }
 
   ngOnInit() {
+    console.log('onInit');
+    // this.informacionCliente = this.route.snapshot.data.informacionCliente;
+    this.clienteDataService.getInformacionCliente().subscribe(
+      data => {
+        console.log('se ha actualizado los datos');
+        this.informacionCliente = data;
+      }
+    );
     initJsFromTs();
   }
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ClienteDataService } from './../services/cliente-data-service.service';
 
 @Component({
   selector: 'app-saldo',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaldoComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  saldos: Saldos;
+
+  constructor(private clienteDataService: ClienteDataService) { }
 
   ngOnInit() {
   }

@@ -1,9 +1,3 @@
-<!-- Content Row -->
-<div class="row">
-
-    <!-- Content Column -->
-    <div class="col-lg-6 mb-4">
-
       <div class="card shadow mb-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Saldo en Uso</h6>
@@ -16,7 +10,7 @@
               <!-- </div> -->
 
               <!-- Content Row -->
-              <div class="row">
+              <div class="row" *ngIf="saldos && saldos.datosSaldos.length > 0">
 
                 <!-- Earnings (Monthly) Card Example -->
                 <div style="padding-left: 0" class="col-xl-4 col-md-6 mb-4">
@@ -96,7 +90,6 @@
                     </div>
                 </div>
 
-
                 <!-- Pending Requests Card Example -->
                 <div style="padding-left: 0" class="col-xl-4 col-md-6 mb-4">
                     <div class="card border-left-warning shadow">
@@ -110,14 +103,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-
+                </div>
               </div>
             </div>
           </div>
-    </div>
-
-    <div class="col-lg-6">
-      <app-datos-equipo></app-datos-equipo>
-    </div>
-</div>

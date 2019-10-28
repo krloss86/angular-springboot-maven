@@ -1,4 +1,6 @@
+import { ClienteDataService } from './../services/cliente-data-service.service';
 import { Component, OnInit } from '@angular/core';
+import { ClienteService } from './../cliente.service';
 
 @Component({
   selector: 'app-topbar',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private clienteService: ClienteService, private clienteDataService: ClienteDataService) { }
 
   ngOnInit() {
   }
 
+  executeBuscar(numeroTelefono: string) {
+    this.clienteService.search(numeroTelefono).subscribe(
+      data => {
+        this.clienteDataService.updateCliente(data);
+      }
+    );
+  }
 }
