@@ -9,11 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { LoginModule } from './login/login.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RecomendacionComponent } from './recomendacion/recomendacion.component';
-import { RecomendacionesComponent } from './recomendaciones/recomendaciones.component';
 import { SaldoComponent } from './saldo/saldo.component';
 import { TopbarComponent } from './topbar/topbar.component';
 import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,14 +24,15 @@ import { NoEncontradoComponent } from './no-encontrado/no-encontrado.component';
     HomeComponent,
     FooterComponent,
     TopbarComponent,
-    RecomendacionesComponent,
     DatosEquipoComponent,
     NoEncontradoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule
+    LoginModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

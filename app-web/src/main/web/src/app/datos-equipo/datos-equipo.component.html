@@ -4,98 +4,13 @@
     </div>
     <div class="card-body">
       <div class="row" *ngIf="equipo && equipo.datosEquipo.length > 0">
-          <div class="col-lg-6">
+          <div *ngFor="let dato of equipo.datosEquipo" class="col-lg-6">
               <div class="card mb-4 border-bottom-success"> 
                 <div class="card-body">
-                  11 días de antiguedad
+                  {{dato.titulo}} : {{dato.dato}} 
                 </div>
               </div>
-          </div>
-
-          <div class="col-lg-6">
-
-              <div class="card mb-4 border-bottom-success">
-                <div class="card-body">
-                  Estado: Linea activa
-                </div>
-              </div>
-          </div>
-
-          <div class="col-lg-6">
-
-              <div class="card mb-4 border-bottom-success">
-                <div class="card-body">
-                  Fabricante: Samsung
-                </div>
-              </div>
-          </div>
-
-          <div class="col-lg-6">
-
-              <div class="card mb-4 border-bottom-success">
-                <div class="card-body">
-                  Equipo en Uso: Si
-                </div>
-              </div>
-          </div>
-        
-          <div class="col-lg-6">
-
-              <div class="card mb-4 border-bottom-success">
-                <div class="card-body">
-                  MISIDN: 1234567890
-                </div>
-              </div>
-          </div>
-
-          <div class="col-lg-6">
-
-              <div class="card mb-4 border-bottom-success">
-                <div class="card-body">
-                  IMEI: 1234567890
-                </div>
-              </div>
-          </div>
-
-          <!--
-          <div class="table-responsive">
-            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4">
-              <div class="row">
-                <div class="col-sm-12">
-                  <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid"
-                    aria-describedby="dataTable_info" style="width: 100%;">
-                    <thead>
-                      <tr role="row">
-                        <th tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                          aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 237px;">
-                          Estado</th>
-                        <th tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                          aria-label="Position: activate to sort column ascending" style="width: 355px;">
-                          Fabricante</th>
-                        <th tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                          aria-label="Office: activate to sort column ascending" style="width: 176px;">
-                          Esquipo en Uso</th>
-                        <th tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                          aria-label="Office: activate to sort column ascending" style="width: 176px;">
-                          MSISDN</th>
-                        <th tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
-                          aria-label="Office: activate to sort column ascending" style="width: 176px;">
-                          IMEI</th>
-                    </thead>
-                    <tbody>
-                      <tr role="row" class="odd">
-                        <td class="sorting_1">Estado xyz</td>
-                        <td>Fabricante xyz</td>
-                        <td>Uso xyz</td>
-                        <td>MSISDN XYZ.</td>
-                        <td>IMEI XYZ.</td>
-                      </tr>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          -->
+          </div>          
         </div>
     </div>
   </div>

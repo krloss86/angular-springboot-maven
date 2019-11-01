@@ -1,6 +1,7 @@
-import { ClienteDataService } from './../services/cliente-data-service.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from './../cliente.service';
+import { ClienteDataService } from './../services/cliente-data-service.service';
 
 @Component({
   selector: 'app-topbar',
@@ -9,16 +10,40 @@ import { ClienteService } from './../cliente.service';
 })
 export class TopbarComponent implements OnInit {
 
-  constructor(private clienteService: ClienteService, private clienteDataService: ClienteDataService) { }
+  searchForm: FormGroup;
+
+  constructor(private clienteService: ClienteService, private clienteDataService: ClienteDataService, private formBuilder: FormBuilder) {
+    this.searchForm = this.buildSearchForm();
+  }
 
   ngOnInit() {
   }
 
-  executeBuscar(numeroTelefono: string) {
-    this.clienteService.search(numeroTelefono).subscribe(
-      data => {
-        this.clienteDataService.updateCliente(data);
+  buildSearchForm(): FormGroup {
+    return this.formBuilder.group(
+      {
+        numeroTelefono: ['', Validators.required],
       }
     );
   }
+
+  executeSearch(): void {
+    if (!this.searchForm.invalid) {
+      this.clienteService.search(this.searchForm.get('numeroTelefono').value).subscribe(
+        data => {
+          this.clienteDataService.updateCliente(data);
+        }
+      );
+    } else {
+      console.log('form invalido');
+    }
+  }
+
+  resetSearch(): void {
+    this.searchForm.reset();
+    this.clienteDataService.clear();
+  }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.searchForm.controls; }
 }

@@ -36,28 +36,11 @@
                     <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1"
                       aria-label="Office: activate to sort column ascending" >Descripción</th>
                 </thead>
-                <!-- <tfoot>
-                  <tr>
-                    <th rowspan="1" colspan="1">Fecha</th>
-                    <th rowspan="1" colspan="1">Empresa</th>
-                    <th rowspan="1" colspan="1">Descripción</th>
-                  </tr>
-                </tfoot> -->
                 <tbody>
-                  <tr role="row" class="odd">
-                    <td class="sorting_1">Ayer 11:09</td>
-                    <td>Claro</td>
-                    <td>Te acreditamos Gs30000. Recibiste de regalo Gs120000 promocionales y 300 MB. Info de saldos y consumos *111#. Trans...</td>
-                  </tr>
-                  <tr role="row" class="odd">
-                      <td class="sorting_1">Ayer 11:09</td>
-                      <td>Claro</td>
-                      <td>Te acreditamos Gs30000. Recibiste de regalo Gs120000 promocionales y 300 MB. Info de saldos y consumos *111#. Trans...</td>
-                  </tr>
-                  <tr role="row" class="odd">
-                      <td class="sorting_1">Ayer 11:09</td>
-                      <td>Claro</td>
-                      <td>Te acreditamos Gs30000. Recibiste de regalo Gs120000 promocionales y 300 MB. Info de saldos y consumos *111#. Trans...</td>
+                  <tr role="row" class="odd" *ngFor="let cliente of cliente.contactos">
+                      <td class="sorting_1">{{cliente.fecha}}</td>
+                      <td>{{cliente.empresa}}</td>
+                      <td>{{cliente.descripcion}}</td>
                   </tr>
               </table>
             </div>

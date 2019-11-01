@@ -5,7 +5,7 @@
     <i class="fa fa-bars"></i>
   </button>
 
-  <!-- Topbar Search -->
+  <!-- Topbar Search
   <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
     <div class="input-group">
       <input type="text" #numeroTelefonoFlield class="form-control bg-light border-0 small" placeholder="Número de teléfono" aria-label="Search" aria-describedby="basic-addon2">
@@ -16,6 +16,22 @@
         </button>
       </div>
     </div>
+  </form>
+  -->
+
+  <!-- Topbar Search -->
+  <form [formGroup]="searchForm" (ngSubmit)="executeSearch()" novalidate class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+      <div class="input-group">
+        <input type="text" formControlName="numeroTelefono" class="form-control bg-light border-0 small" placeholder="Número de teléfono" 
+          aria-label="Search" aria-describedby="basic-addon2" [ngClass]="{ 'is-invalid': f.numeroTelefono.dirty && f.numeroTelefono.errors }">
+        <div class="input-group-append">
+          <button class="btn btn-primary" type="button" type="submit" [disabled]="f.numeroTelefono.errors">
+              Buscar
+              <i class="fas fa-search fa-sm"></i>
+          </button>
+          <button class="btn btn-info" type="button" type="reset" (click)="resetSearch()" [disabled]="searchForm.pristine">Limpiar</button>
+        </div>
+      </div>
   </form>
 
   <ul class="navbar-nav ml-auto">

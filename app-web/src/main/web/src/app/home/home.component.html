@@ -5,18 +5,15 @@
 
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
-
     <!-- Main Content -->
     <div id="content">
-
       <!-- Topbar -->
       <app-topbar></app-topbar>
       <!-- End of Topbar -->
-
       <!-- Begin Page Content -->
-      <div class="container-fluid">
+      <div class="container-fluid">        
         <!-- Content Row -->
-        <div class="row">
+        <div class="row">          
           <!-- Content Column -->
             <div class="col-lg-6 mb-4">
               <app-saldo [saldos]="informacionCliente.saldos"></app-saldo>
@@ -24,39 +21,27 @@
             <div class="col-lg-6">
               <app-datos-equipo [equipo]="informacionCliente.equipo"></app-datos-equipo>
             </div>
-        </div>
+        </div>       
         <!-- Content Row -->
         <div class="row">
-
           <!-- Content Column -->
           <div class="col-lg-8 mb-4">
-
             <!-- CONTACTO -->
             <app-contacto [cliente]="informacionCliente.cliente"></app-contacto>
-
           </div>
-
           <div class="col-lg-4 mb-4">
-
             <app-recomendacion [recomendaciones]="informacionCliente.recomendaciones"></app-recomendacion>
-
           </div>
-
         </div>
-
       </div>
       <!-- /.container-fluid -->
-
     </div>
     <!-- End of Main Content -->
-
     <!-- Footer -->
     <app-footer></app-footer>
     <!-- End of Footer -->
-
   </div>
   <!-- End of Content Wrapper -->
-
 </div>
 <!-- End of Page Wrapper -->
 

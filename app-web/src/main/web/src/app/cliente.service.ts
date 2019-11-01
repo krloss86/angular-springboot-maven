@@ -1,9 +1,9 @@
-import { ClienteDataService } from './services/cliente-data-service.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from './../environments/environment';
+import { ClienteDataService } from './services/cliente-data-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class ClienteService {
   constructor(private http: HttpClient) { }
 
   /**
-   * Busca productos dado un texto
+   * Busca datos dado el numero de telefono
    * @param querySearch texto buscado
    */
   search(numeroTelefono: string): Observable<InformacionCliente> {
@@ -32,24 +32,15 @@ export class ClienteInformacionResolve implements Resolve<InformacionCliente> {
    }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<InformacionCliente> | InformacionCliente {
-    const rs = {
-      saldos: {datosSaldos: []},
-      equipo: {datosEquipo: []},
-      cliente: {contactos: []},
-      recomendaciones: { recomendaciones: []}
-    };
 
-    this.clienteDataService.updateCliente(rs);
+    this.clienteDataService.updateCliente(this.clienteDataService.datosVacios);
 
     const numeroTelefono = route.params.numeroTelefono;
 
-   //  console.log('numero obtenido');
-
-    // console.log('resolve ClienteInformacionResolve {0}', numeroTelefono);
     if (numeroTelefono) {
       return this.clienteService.search(numeroTelefono);
     } else {
-      return rs;
+      return this.clienteDataService.datosVacios;
     }
 
   }

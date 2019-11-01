@@ -5,18 +5,22 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ClienteDataService {
+  public datosVacios = {
+    saldos: {datosSaldos: []},
+    equipo: {datosEquipo: []},
+    cliente: {contactos: []},
+    recomendaciones: { recomendaciones: []}
+  };
 
   private informacionClienteSubject = new BehaviorSubject<InformacionCliente>(null);
 
   private currentInformacionCliente: Observable<InformacionCliente> = this.informacionClienteSubject.asObservable();
 
-  private informacionCliente: InformacionCliente;
-
   constructor() {
   }
 
   public updateCliente(nuevaInformacionCliente: InformacionCliente) {
-    console.log('actualizando InformacionCliente');
+    // console.log('actualizando InformacionCliente');
     this.informacionClienteSubject.next(nuevaInformacionCliente);
   }
 
@@ -24,8 +28,8 @@ export class ClienteDataService {
     return this.currentInformacionCliente;
   }
 
-  clear() {
+  public clear(): void {
     // clear by calling subject.next() without parameters
-    this.informacionClienteSubject.next(null);
-}
+    this.informacionClienteSubject.next(this.datosVacios);
+  }
 }

@@ -1,3 +1,4 @@
+import { ClienteDataService } from './../services/cliente-data-service.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -10,7 +11,7 @@ export class RecomendacionComponent implements OnInit {
   @Input()
   recomendaciones: Recomendaciones;
 
-  constructor() { }
+  constructor(public clienteDataService: ClienteDataService) { }
 
   ngOnInit() {
   }
