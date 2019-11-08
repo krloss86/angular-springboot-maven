@@ -1,17 +1,14 @@
 server:
    servlet:
       context-path: /
-   port: 8090
+   port: 5000
 spring:
    profiles:
       active: default
    datasource:
-#      url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:aws_eb_db}
-#      username: ${MYSQL_USERNAME:root}
-#      password: ${MYSQL_PASSWORD:root}
-      url: jdbc:mysql://localhost:3306/appdb
-      username: root
-      password: xxxx
+      url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:aws_eb_db}
+      username: ${MYSQL_USERNAME:root}
+      password: ${MYSQL_PASSWORD:root}
    jpa:
       hibernate:
          ddl-auto: create

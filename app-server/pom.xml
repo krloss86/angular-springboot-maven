@@ -30,9 +30,23 @@
             <scope>runtime</scope>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql
+		<dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>42.2.8</version>
+		</dependency>
+		--> 
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>		<dependency>
+        </dependency>
+	
+        <dependency>
 	        <groupId>com.swathisprasad.tutorial</groupId>
 	        <artifactId>app-web</artifactId>
 	        <version>${project.version}</version>
@@ -63,20 +77,6 @@
 				      </execution>
 				</executions>
 			</plugin>
-			<!-- Deshabilitado, Maven Failsafe Plugin runs integration tests for your Maven project -->
-			<!--  
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-			</plugin>
-			-->
-			<!-- Deshabilitado, Surefire Plugin is used during the test phase of the build lifecycle to execute the unit tests of an application -->
-			<!-- 
-			<plugin>
-			    <groupId>org.apache.maven.plugins</groupId>
-			    <artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-			-->
 			<!-- Deshabilitado, no es necesario generar artefactos ejecutables --> 
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -92,4 +92,15 @@
       		</plugin>
         </plugins>
     </build>
+    
+    <profiles>
+    	<profile>
+    		<id>demo</id>
+    		<properties>
+    			<spring.profiles.active>
+    				demo
+    			</spring.profiles.active>
+    		</properties>
+    	</profile>
+    </profiles>
 </project>
