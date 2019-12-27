@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     }
 
   ngOnInit() {
+    // debugger;
     console.log('onInit');
     // this.informacionCliente = this.route.snapshot.data.informacionCliente;
     this.clienteDataService.getInformacionCliente().subscribe(
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit {
         this.informacionCliente = data;
       }
     );
+    // invoca una funcion llamda initJsFromTs() ubicada en el archivo init.js. Permite que funcione el menu laterar izquierdo.
     initJsFromTs();
   }
 

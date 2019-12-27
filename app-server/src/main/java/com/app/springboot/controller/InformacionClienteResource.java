@@ -21,7 +21,7 @@ import com.app.springboot.dto.InformacionClienteDTO;
 
 @RestController
 @RequestMapping("/cliente")
-// @CrossOrigin(origins = "http://localhost:4200",methods = {RequestMethod.GET, RequestMethod.POST}, allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:4200",methods = {RequestMethod.GET, RequestMethod.POST}, allowedHeaders = "*")
 public class InformacionClienteResource {
 
 	@Autowired

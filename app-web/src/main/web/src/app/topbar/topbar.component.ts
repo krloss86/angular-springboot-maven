@@ -12,7 +12,11 @@ export class TopbarComponent implements OnInit {
 
   searchForm: FormGroup;
 
-  constructor(private clienteService: ClienteService, private clienteDataService: ClienteDataService, private formBuilder: FormBuilder) {
+  constructor(
+    private clienteService: ClienteService,
+    private clienteDataService: ClienteDataService,
+    private formBuilder: FormBuilder
+  ) {
     this.searchForm = this.buildSearchForm();
   }
 
