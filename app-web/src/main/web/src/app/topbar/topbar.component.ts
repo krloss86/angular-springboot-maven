@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClienteService } from './../cliente.service';
 import { ClienteDataService } from './../services/cliente-data-service.service';
+import { AlertService } from '../login/_services';
 
 @Component({
   selector: 'app-topbar',
@@ -12,10 +13,14 @@ export class TopbarComponent implements OnInit {
 
   searchForm: FormGroup;
 
+  loading = false;
+  submitted = false;
+
   constructor(
     private clienteService: ClienteService,
     private clienteDataService: ClienteDataService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private alserService: AlertService
   ) {
     this.searchForm = this.buildSearchForm();
   }
@@ -32,10 +37,15 @@ export class TopbarComponent implements OnInit {
   }
 
   executeSearch(): void {
+    this.submitted = true;
+    this.loading = true;
     if (!this.searchForm.invalid) {
       this.clienteService.search(this.searchForm.get('numeroTelefono').value).subscribe(
         data => {
           this.clienteDataService.updateCliente(data);
+          this.loading = false;
+        }, error => {
+          this.loading = false;
         }
       );
     } else {
@@ -46,6 +56,7 @@ export class TopbarComponent implements OnInit {
   resetSearch(): void {
     this.searchForm.reset();
     this.clienteDataService.clear();
+    this.alserService.clear();
   }
 
   // convenience getter for easy access to form fields

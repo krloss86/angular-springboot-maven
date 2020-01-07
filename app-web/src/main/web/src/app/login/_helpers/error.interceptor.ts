@@ -1,14 +1,15 @@
+import { AlertService } from './../_services/alert.service';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AuthenticationService } from '../_services';
-import { Router } from '@angular/router';
 
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-    constructor(private authenticationService: AuthenticationService, private router: Router) {}
+    constructor(private authenticationService: AuthenticationService, private router: Router, private alertService: AlertService) {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         console.log('ErrorInterceptor...');
@@ -19,6 +20,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                 location.reload(true);
             }
             const error = err.error.message || err.statusText;
+            this.alertService.error(error);
             return throwError(error);
         }));
     }
