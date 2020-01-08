@@ -32,7 +32,7 @@ export class ClienteInformacionResolve implements Resolve<InformacionCliente> {
    }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<InformacionCliente> | InformacionCliente {
-
+    // debugger;
     this.clienteDataService.updateCliente(this.clienteDataService.datosVacios);
 
     const numeroTelefono = route.params.numeroTelefono;

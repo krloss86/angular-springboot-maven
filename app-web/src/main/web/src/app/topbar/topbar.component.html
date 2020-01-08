@@ -25,11 +25,15 @@
         <input type="text" formControlName="numeroTelefono" class="form-control bg-light border-0 small" placeholder="Número de teléfono" 
           aria-label="Search" aria-describedby="basic-addon2" [ngClass]="{ 'is-invalid': f.numeroTelefono.dirty && f.numeroTelefono.errors }">
         <div class="input-group-append">
-          <button class="btn btn-primary" type="button" type="submit" [disabled]="f.numeroTelefono.errors">
-              Buscar
-              <i class="fas fa-search fa-sm"></i>
+          <button class="btn btn-primary" type="button" type="submit" [disabled]="f.numeroTelefono.errors || loading">
+            Buscar
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            <i *ngIf="!loading" class="fas fa-search fa-sm"></i>
           </button>
-          <button class="btn btn-info" type="button" type="reset" (click)="resetSearch()" [disabled]="searchForm.pristine">Limpiar</button>
+          <button class="btn btn-info" type="button" type="reset" (click)="resetSearch()" [disabled]="searchForm.pristine || loading">
+            Limpiar
+            <i class="fas fa-eraser fa-sm"></i>
+          </button>
         </div>
       </div>
   </form>
@@ -44,12 +48,17 @@
       </a>
       <!-- Dropdown - Messages -->
       <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-        <form class="form-inline mr-auto w-100 navbar-search">
+        <form [formGroup]="searchForm" (ngSubmit)="executeSearch()" novalidate class="form-inline mr-auto w-100 navbar-search">
           <div class="input-group">
-            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+            <input type="text" formControlName="numeroTelefono" class="form-control bg-light border-0 small" placeholder="Search for..." 
+              aria-label="Search" aria-describedby="basic-addon2" [ngClass]="{ 'is-invalid': f.numeroTelefono.dirty && f.numeroTelefono.errors }">
             <div class="input-group-append">
-              <button class="btn btn-primary" type="button">
-                <i class="fas fa-search fa-sm"></i>
+              <button class="btn btn-primary" type="submit" [disabled]="f.numeroTelefono.errors || loading">
+                <i *ngIf="!loading" class="fas fa-search fa-sm"></i>
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              </button>
+              <button class="btn btn-info" type="button" type="reset" (click)="resetSearch()" [disabled]="searchForm.pristine || loading">
+                <i class="fas fa-eraser fa-sm"></i>
               </button>
             </div>
           </div>
@@ -172,7 +181,7 @@
     <li class="nav-item dropdown no-arrow">
       <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-        <!-- <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60"> -->
+        <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
       </a>
       <!-- Dropdown - User Information -->
       <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

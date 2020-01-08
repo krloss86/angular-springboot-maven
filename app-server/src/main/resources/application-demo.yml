@@ -4,11 +4,11 @@ server:
    port: 5000
 spring:
    profiles:
-      active: default
+      active: '@spring.profiles.active@'
    datasource:
-      url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:aws_eb_db}
-      username: ${MYSQL_USERNAME:root}
-      password: ${MYSQL_PASSWORD:root}
+      url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DB:appdb}?useSSL=false
+      username: ${MYSQL_USERNAME:appdbusername}
+      password: ${MYSQL_PASSWORD:appdbpassword}
    jpa:
       hibernate:
          ddl-auto: create

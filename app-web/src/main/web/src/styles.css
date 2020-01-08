@@ -2,3 +2,9 @@
 .sidebar {
     height: 100%;
 }
+
+.alert {
+    margin-bottom: 0rem;
+    border: 0px solid transparent;
+    border-radius: 0rem;
+}

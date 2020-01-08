@@ -21,7 +21,7 @@ import com.app.springboot.dto.InformacionClienteDTO;
 
 @RestController
 @RequestMapping("/cliente")
-// @CrossOrigin(origins = "http://localhost:4200",methods = {RequestMethod.GET, RequestMethod.POST}, allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:4200",methods = {RequestMethod.GET, RequestMethod.POST}, allowedHeaders = "*")
 public class InformacionClienteResource {
 
 	@Autowired
@@ -36,10 +36,10 @@ public class InformacionClienteResource {
 		InformacionClienteDTO informacionCliente = new InformacionClienteDTO();
 		
 		if(Integer.parseInt(numeroTelefono) > 100) {
-			informacionCliente.getCliente().getContactos().add(new DatoCliente("HOY 10:09","CLARO","Te acreditamos Gs60000. Recibiste de regalo Gs180000 promocionales y 600 MB. Info de saldos y consumos *111#. Trans..."));
-			informacionCliente.getCliente().getContactos().add(new DatoCliente("Ayer 11:09","CLARO","Te acreditamos Gs30000. Recibiste de regalo Gs120000 promocionales y 300 MB. Info de saldos y consumos *111#. Trans..."));
-			informacionCliente.getCliente().getContactos().add(new DatoCliente("01/10/2019 10:09","CLARO","Te acreditamos Gs60000. Recibiste de regalo Gs180000 promocionales y 600 MB. Info de saldos y consumos *111#. Trans..."));
-			informacionCliente.getCliente().getContactos().add(new DatoCliente("25/09/2019 20:09","CLARO","Te acreditamos Gs60000. Recibiste de regalo Gs180000 promocionales y 600 MB. Info de saldos y consumos *111#. Trans..."));
+			informacionCliente.getCliente().getContactos().add(new DatoCliente("HOY 10:09","CLARO","Te acreditamos CODYYZZ0. Recibiste de regalo CODIGOXXXX promocionales y 600 MB. Info de saldos y consumos *YYY#. Trans..."));
+			informacionCliente.getCliente().getContactos().add(new DatoCliente("Ayer 11:09","CLARO","Te acreditamos CODYYZZ0. Recibiste de regalo CODIGOXXXX promocionales y 300 MB. Info de saldos y consumos *YYY#. Trans..."));
+			informacionCliente.getCliente().getContactos().add(new DatoCliente("01/10/2019 10:09","CLARO","Te acreditamos CODYYZZ0. Recibiste de regalo CODIGOXXXX promocionales y 600 MB. Info de saldos y consumos *YYY#. Trans..."));
+			informacionCliente.getCliente().getContactos().add(new DatoCliente("25/09/2019 20:09","CLARO","Te acreditamos CODYYZZ0. Recibiste de regalo CODIGOXXXX promocionales y 600 MB. Info de saldos y consumos *YYY#. Trans..."));
 			informacionCliente.getEquipo().getDatosEquipo().add(new DatoEquipo("IMEI", "1234567890"));
 			informacionCliente.getEquipo().getDatosEquipo().add(new DatoEquipo("ESTADO", "linea inactiva"));
 			informacionCliente.getEquipo().getDatosEquipo().add(new DatoEquipo("FABRICANTE", "HUAWEI"));
@@ -47,12 +47,12 @@ public class InformacionClienteResource {
 			informacionCliente.getEquipo().getDatosEquipo().add(new DatoEquipo("MISDN", "1122334455"));
 			informacionCliente.getRecomendaciones().getRecomendaciones().add(new DatoRecomendacionDTO("OFERTA", "Nueva", "Tenemos una oferta especial."));
 			informacionCliente.getRecomendaciones().getRecomendaciones().add(new DatoRecomendacionDTO("OFERTA", "Nuevo Pack", "Tenemos una oferta especial de packs."));
-			informacionCliente.getSaldos().getDatosSaldos().add(new DatoSaldo("CRÉDITO DE RECARGA", "22-jul","Gs 15.510"));
-			informacionCliente.getSaldos().getDatosSaldos().add(new DatoSaldo("CRÉDITO DE RECARGA", "21-jun","Gs 15.510"));
-			informacionCliente.getSaldos().getDatosSaldos().add(new DatoSaldo("CRÉDITO DE RECARGA", "21-jun","Gs 15.510"));
+			informacionCliente.getSaldos().getDatosSaldos().add(new DatoSaldo("CRÉDITO DE RECARGA", "22-jul","COD XXYY.ZZ"));
+			informacionCliente.getSaldos().getDatosSaldos().add(new DatoSaldo("CRÉDITO DE RECARGA", "21-jun","COD XXYY.ZZ"));
+			informacionCliente.getSaldos().getDatosSaldos().add(new DatoSaldo("CRÉDITO DE RECARGA", "21-jun","COD XXYY.ZZ"));
 		}else {
-			informacionCliente.getCliente().getContactos().add(new DatoCliente("Ayer 11:09","CLARO","Te acreditamos Gs30000. Recibiste de regalo Gs120000 promocionales y 300 MB. Info de saldos y consumos *111#. Trans..."));
-			informacionCliente.getCliente().getContactos().add(new DatoCliente("Ayer 10:19","CLARO","Te acreditamos Gs30002. Recibiste de regalo Gs120002 promocionales y 500 MB. Info de saldos y consumos *111#. Trans..."));
+			informacionCliente.getCliente().getContactos().add(new DatoCliente("Ayer 11:09","CLARO","Te acreditamos CODZZ123. Recibiste de regalo CODIGOXXXX promocionales y 300 MB. Info de saldos y consumos *YYY#. Trans..."));
+			informacionCliente.getCliente().getContactos().add(new DatoCliente("Ayer 10:19","CLARO","Te acreditamos CODZZ123. Recibiste de regalo CODIGOXXXX promocionales y 500 MB. Info de saldos y consumos *YYY#. Trans..."));
 			informacionCliente.getEquipo().getDatosEquipo().add(new DatoEquipo("IMEI", "2211334455"));
 			informacionCliente.getEquipo().getDatosEquipo().add(new DatoEquipo("ESTADO", "linea ACTIVA"));
 			informacionCliente.getEquipo().getDatosEquipo().add(new DatoEquipo("FABRICANTE", "SONY"));
